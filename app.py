@@ -6,8 +6,8 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Replace with a secure key in production
 
 # GitHub OAuth configuration
-CLIENT_ID = "your_client_id"  # Replace with your GitHub Client ID
-CLIENT_SECRET = "your_client_secret"  # Replace with your GitHub Client Secret
+CLIENT_ID = os.getenv("GITHUB_CLIENT_ID")  # Replace with your GitHub Client ID
+CLIENT_SECRET = os.getenv("GITHUB_CLIENT_SECRET")  # Replace with your GitHub Client Secret
 AUTHORIZE_URL = "https://github.com/login/oauth/authorize"
 TOKEN_URL = "https://github.com/login/oauth/access_token"
 USER_API_URL = "https://api.github.com/user"
